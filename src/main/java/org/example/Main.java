@@ -10,9 +10,9 @@ import org.hibernate.cfg.Configuration;
 public class Main {
     static void main() {
         Student s1 = new Student();
-        s1.setRollNo(101);
+        s1.setRollNo(103);
         s1.setsAge(17);
-        s1.setsName("John");
+        s1.setsName("Jane");
 
         Configuration cfg = new Configuration();
         cfg.addAnnotatedClass(org.example.Student.class);
@@ -26,6 +26,9 @@ public class Main {
         session.persist(s1);
 
         transaction.commit();
+
+        session.close();
+        sf.close();
 
         System.out.println(s1);
 
