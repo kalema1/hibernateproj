@@ -33,4 +33,14 @@ public class Student {
     public int getsAge() {
         return sAge;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "rollNo=" + rollNo +
+                " sAge=" + sAge +
+                ", sName='" + sName + '\'' +
+                '}';
+    }
+
 }
