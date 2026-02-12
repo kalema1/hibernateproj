@@ -54,10 +54,31 @@ public class Main {
 
 //        updating the data in the db
 
+//        Student s1 = new Student();
+//        s1.setRollNo(106);
+//        s1.setsAge(19);
+//        s1.setsName("Anvit");
+//
+//        Configuration cfg = new Configuration();
+//        cfg.addAnnotatedClass(org.example.Student.class);
+//        cfg.configure();
+//
+//        SessionFactory sf = cfg.buildSessionFactory();
+//        Session session = sf.openSession();
+//
+//        Transaction transaction = session.beginTransaction();
+//
+//        session.merge(s1);
+//
+//        transaction.commit();
+//
+//        session.close();
+//        sf.close();
+//
+//        System.out.println(s1);
+
+//        deleting
         Student s1 = new Student();
-        s1.setRollNo(103);
-        s1.setsAge(19);
-        s1.setsName("Jane");
 
         Configuration cfg = new Configuration();
         cfg.addAnnotatedClass(org.example.Student.class);
@@ -66,9 +87,11 @@ public class Main {
         SessionFactory sf = cfg.buildSessionFactory();
         Session session = sf.openSession();
 
+        s1 = session.find(Student.class,106);
+
         Transaction transaction = session.beginTransaction();
 
-        session.merge(s1);
+        session.remove(s1);
 
         transaction.commit();
 
